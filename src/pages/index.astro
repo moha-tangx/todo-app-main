@@ -1,0 +1,36 @@
+---
+import List from '../components/List.astro';
+import Layout from '../layouts/Layout.astro';
+import Input from "../components/Input.astro"
+import Header from '../components/Header.astro';
+
+const title = "TODO APP"
+const name = "TODO"
+---
+<Layout title={title}>
+	<div class="app">
+		<Header title={name}></Header>
+		<Input></Input>
+		<List>
+	</div>
+</Layout>
+
+<style>
+	.app{
+			align-items: center;
+			border-radius: .5rem;
+			display:flex;
+			flex-direction: column;
+			gap: 1rem;
+			height:100vh ;
+			max-width: 80vw;
+			min-width: 360px;
+			width: 40vw;
+			color: white;
+		}
+	.app > *{
+		border-radius: inherit ;
+	}
+</style>
+
+<script src="../scripts/app.js"></script>

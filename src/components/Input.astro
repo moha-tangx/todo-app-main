@@ -1,0 +1,51 @@
+---
+type Props = {
+
+}
+
+const {} = Astro.props
+
+---
+<form action="/"  class="todo-input">
+        <div class="toggle"></div>
+        <input type="text" name="add" id="add" placeholder="Create a new todo...">
+</form>
+
+<style>
+    form{
+        height: 8vh;
+    }
+    .toggle{
+        height: 40%;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        border: 1px solid var(--Inactive);
+    }
+    .todo-input{
+        border-radius: inherit;
+        width: 100%;
+        background-color: var(--App-bg);
+        color: #fff;
+        align-items: center;
+        display:flex;
+        padding: 0 5%;
+    }
+
+    input{
+        border: none;
+        outline: transparent;
+        height: 100%;
+        background: transparent;
+        color: var(--Text);
+        font-size: 1.4rem;
+        text-indent: 2ch;
+        width: 100%;
+    }
+
+    input::placeholder{
+        color: var(--Inactive);
+    }
+
+</style>
+
+<script></script>

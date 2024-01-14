@@ -1,0 +1,35 @@
+---
+interface Props {
+	title: string;
+}
+
+import sun from "../images/icon-sun.svg"
+
+const {  title } = Astro.props;
+---
+<header>
+	<h1 class="name">
+		{title}
+	</h1>
+	<div class="theme-toggle">
+		<img src={sun.src} alt="">
+	</div>
+</header>
+
+<style>
+	header{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1.5rem;
+		margin-top: 10%;
+	}
+	.name{
+		font-size: 2rem;
+		letter-spacing: .5rem;
+	}
+	.theme-toggle{
+		cursor: pointer;
+	}
+</style>

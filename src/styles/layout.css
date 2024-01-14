@@ -1,0 +1,160 @@
+@font-face {
+    font-family: Josefin Sans;
+    src: url("https://fonts.google.com/specimen/Josefin+Sans");
+}
+
+:root {
+    /* Primary */
+    --Selected: hsl(220, 98%, 61%);
+    --Check-Background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+    /* Light Theme */
+    --Main-bg: hsl(0, 0%, 98%);
+    --Text: hsl(235, 19%, 35%);
+    --App-bg: hsl(236, 0%, 98%);
+    --Shadow: hsl(236, 9%, 61%);
+    --Inactive: hsl(233, 11%, 84%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+
+    /* hover */
+    --Light-Grayish-Blue: hsl(236, 33%, 92%);
+}
+
+:root.dark {
+    --Text: hsl(234, 39%, 85%);
+    --Inactive: hsl(234, 11%, 52%);
+    --App-bg: hsl(235, 24%, 19%);
+    --Main-bg: hsl(235, 21%, 11%);
+    --Shadow: transparent;
+    --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+    /* (hover) */
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-display: swap;
+    font-family: Josefin Sans, system-ui;
+}
+
+main {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    justify-content: center;
+    background: url(../images/bg-desktop-light.jpg) no-repeat var(--Main-bg);
+    background-size: 100% auto;
+    font-display: initial;
+}
+
+:root.dark main {
+    background-image: url(../images/bg-desktop-dark.jpg);
+}
+
+@media only screen and (max-width:500px) {
+    main {
+        background: url(../images//bg-mobile-light.jpg) no-repeat var(--Main-bg);
+        background-size: 100% auto;
+    }
+
+    :root.dark main {
+        background: url(../images/bg-mobile-dark.jpg) no-repeat var(--Main-bg);
+        background-size: 100% auto;
+    }
+}
+
+.todo {
+    align-items: center;
+    border-block-end: 1px solid var(--Inactive);
+    border-bottom: 1px solid var(--Inactive);
+    display: flex;
+    gap: 1rem;
+    height: 8vh;
+    padding: 0 1rem;
+}
+
+.todo p {
+    flex: 1;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.check-ball {
+    height: 40%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 1px solid var(--Inactive);
+    cursor: pointer;
+}
+
+.completed .check-ball {
+    background: url(../images/icon-check.svg) no-repeat center green;
+}
+
+.todo.completed {
+    text-decoration: line-through var(--Inactive);
+    color: var(--Inactive);
+}
+
+.list {
+    width: 100%;
+    border-radius: inherit;
+    background: var(--App-bg);
+    color: var(--Text);
+    box-shadow: 2px 4px 10px 0px var(--Shadow);
+}
+
+
+.foot {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 4%;
+    position: relative;
+}
+
+.categs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.categs span,
+.todo-count,
+.clear-btn {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media only screen and (min-width:500px) {
+    .remove {
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .todo:hover .remove {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .categs {
+        position: absolute;
+        bottom: -150%;
+        width: 100%;
+        left: 0;
+        padding: 1rem 0;
+        border-radius: .5rem;
+    }
+
+    .todo p {
+        font-size: small;
+    }
+}

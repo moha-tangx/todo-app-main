@@ -1,0 +1,25 @@
+{
+  "name": "TODO APP",
+  "short_name": "TODO",
+  "start_url": "./index.html",
+  "scope": "/",
+  "description": "track your tasks",
+  "id": "todo app 0.0.1",
+  "serviceworker": {
+    "src": "./serviceWorker.js"
+  },
+  "icons": [
+    {
+      "src": "./images/icon-check.svg",
+      "sizes": "9x11",
+      "type": "image/svg",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#FFF",
+  "background_color": "#FFF",
+  "display": "standalone",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "orientation": "portrait",
+  "protocol_handlers": []
+}

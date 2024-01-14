@@ -1,0 +1,70 @@
+---
+
+import remove from "../images/icon-cross.svg"
+type Props = {
+
+}
+
+const {} = Astro.props
+---
+<div class="list">
+    <div>
+    </div>
+    <div class="foot">
+        <div class="todo-count">
+        </div>
+        <div class="categs">
+            <span class="all selected">All</span>
+            <span class="active">Active</span>
+            <span class="completed">Completed</span>
+        </div>
+        <div class="clear-btn">
+            clear completed
+        </div>
+    </div>
+</div>
+
+<style>
+    .foot{
+        align-items: center;
+        display:flex;
+        justify-content: space-between;
+        padding: 4%;
+        position: relative;
+    }
+    .categs {
+        display:flex;
+        justify-content: center;
+        : 1rem;
+    }
+
+    .categs span, .todo-count, .clear-btn{
+        font-weight: 500;
+        cursor: pointer;
+        color: var(--Inactive);
+    }
+
+    .categs span:hover, .todo-count:hover, .clear-btn:hover{
+        color:var(--Text);
+    }
+
+    .categs span.selected{
+        color: var(--Selected);
+    }
+
+    @media only screen and (max-width:500px){
+        .categs{
+            position: absolute;
+            bottom: -150%;
+            background-color: var(--App-bg,#99f);
+            width: 100%;
+            left: 0;
+            padding: 1rem 0;
+            border-radius: .5rem;
+            box-shadow: 2px 2px 20px 0 var(--Shadow);
+        }
+    }
+
+</style>
+
+<script></script>
